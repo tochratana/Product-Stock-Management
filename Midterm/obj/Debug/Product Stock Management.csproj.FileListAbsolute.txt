@@ -1,0 +1,13 @@
+C:\Users\MPG\tochratana\Product-Stock-Management\Midterm\bin\Debug\Midterm.exe.config
+C:\Users\MPG\tochratana\Product-Stock-Management\Midterm\bin\Debug\Midterm.exe
+C:\Users\MPG\tochratana\Product-Stock-Management\Midterm\bin\Debug\Midterm.pdb
+C:\Users\MPG\tochratana\Product-Stock-Management\Midterm\obj\Debug\Product Stock Management.csproj.AssemblyReference.cache
+C:\Users\MPG\tochratana\Product-Stock-Management\Midterm\obj\Debug\Midterm.Admin.resources
+C:\Users\MPG\tochratana\Product-Stock-Management\Midterm\obj\Debug\Midterm.Login.resources
+C:\Users\MPG\tochratana\Product-Stock-Management\Midterm\obj\Debug\Midterm.Properties.Resources.resources
+C:\Users\MPG\tochratana\Product-Stock-Management\Midterm\obj\Debug\Midterm.Sale.resources
+C:\Users\MPG\tochratana\Product-Stock-Management\Midterm\obj\Debug\Midterm.ViewCart.resources
+C:\Users\MPG\tochratana\Product-Stock-Management\Midterm\obj\Debug\Product Stock Management.csproj.GenerateResource.cache
+C:\Users\MPG\tochratana\Product-Stock-Management\Midterm\obj\Debug\Product Stock Management.csproj.CoreCompileInputs.cache
+C:\Users\MPG\tochratana\Product-Stock-Management\Midterm\obj\Debug\Midterm.exe
+C:\Users\MPG\tochratana\Product-Stock-Management\Midterm\obj\Debug\Midterm.pdb

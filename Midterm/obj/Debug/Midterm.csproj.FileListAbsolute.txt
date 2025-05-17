@@ -1,0 +1,26 @@
+D:\year 2\C# Programming Midterm\Midterm\Midterm\bin\Debug\Midterm.exe.config
+D:\year 2\C# Programming Midterm\Midterm\Midterm\bin\Debug\Midterm.exe
+D:\year 2\C# Programming Midterm\Midterm\Midterm\bin\Debug\Midterm.pdb
+D:\year 2\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.csproj.AssemblyReference.cache
+D:\year 2\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.Admin.resources
+D:\year 2\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.Login.resources
+D:\year 2\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.Properties.Resources.resources
+D:\year 2\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.Sale.resources
+D:\year 2\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.ViewCart.resources
+D:\year 2\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.csproj.GenerateResource.cache
+D:\year 2\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.csproj.CoreCompileInputs.cache
+D:\year 2\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.exe
+D:\year 2\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.pdb
+C:\Users\MPG\Downloads\Telegram Desktop\C# Programming Midterm\C# Programming Midterm\Midterm\Midterm\bin\Debug\Midterm.exe.config
+C:\Users\MPG\Downloads\Telegram Desktop\C# Programming Midterm\C# Programming Midterm\Midterm\Midterm\bin\Debug\Midterm.exe
+C:\Users\MPG\Downloads\Telegram Desktop\C# Programming Midterm\C# Programming Midterm\Midterm\Midterm\bin\Debug\Midterm.pdb
+C:\Users\MPG\Downloads\Telegram Desktop\C# Programming Midterm\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.csproj.AssemblyReference.cache
+C:\Users\MPG\Downloads\Telegram Desktop\C# Programming Midterm\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.Admin.resources
+C:\Users\MPG\Downloads\Telegram Desktop\C# Programming Midterm\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.Login.resources
+C:\Users\MPG\Downloads\Telegram Desktop\C# Programming Midterm\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.Properties.Resources.resources
+C:\Users\MPG\Downloads\Telegram Desktop\C# Programming Midterm\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.Sale.resources
+C:\Users\MPG\Downloads\Telegram Desktop\C# Programming Midterm\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.ViewCart.resources
+C:\Users\MPG\Downloads\Telegram Desktop\C# Programming Midterm\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.csproj.GenerateResource.cache
+C:\Users\MPG\Downloads\Telegram Desktop\C# Programming Midterm\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.csproj.CoreCompileInputs.cache
+C:\Users\MPG\Downloads\Telegram Desktop\C# Programming Midterm\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.exe
+C:\Users\MPG\Downloads\Telegram Desktop\C# Programming Midterm\C# Programming Midterm\Midterm\Midterm\obj\Debug\Midterm.pdb
