@@ -89,19 +89,20 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.BackColor = System.Drawing.Color.ForestGreen;
             this.btnLogin.Font = new System.Drawing.Font("AKbalthom Cabin", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(54, 453);
+            this.btnLogin.Location = new System.Drawing.Point(54, 446);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(545, 45);
+            this.btnLogin.Size = new System.Drawing.Size(545, 59);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Log in";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(52, 397);
+            this.lblMessage.Location = new System.Drawing.Point(52, 394);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(0, 38);
             this.lblMessage.TabIndex = 7;
@@ -110,6 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 38F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(666, 576);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.btnLogin);

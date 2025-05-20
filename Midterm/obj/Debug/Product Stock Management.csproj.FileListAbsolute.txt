@@ -11,3 +11,4 @@ C:\Users\MPG\tochratana\Product-Stock-Management\Midterm\obj\Debug\Product Stock
 C:\Users\MPG\tochratana\Product-Stock-Management\Midterm\obj\Debug\Product Stock Management.csproj.CoreCompileInputs.cache
 C:\Users\MPG\tochratana\Product-Stock-Management\Midterm\obj\Debug\Midterm.exe
 C:\Users\MPG\tochratana\Product-Stock-Management\Midterm\obj\Debug\Midterm.pdb
+C:\Users\MPG\tochratana\Product-Stock-Management\Midterm\obj\Debug\Midterm.ReceiptForm.resources

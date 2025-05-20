@@ -45,9 +45,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.txtID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productImage)).BeginInit();
             this.SuspendLayout();
@@ -55,10 +55,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lobster", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(358, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(276, 55);
+            this.label1.Size = new System.Drawing.Size(317, 42);
             this.label1.TabIndex = 2;
             this.label1.Text = "Products For Sale";
             // 
@@ -134,29 +134,32 @@
             // 
             // btnAddCart
             // 
-            this.btnAddCart.Location = new System.Drawing.Point(1026, 78);
+            this.btnAddCart.BackColor = System.Drawing.Color.Fuchsia;
+            this.btnAddCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCart.Location = new System.Drawing.Point(902, 270);
             this.btnAddCart.Name = "btnAddCart";
-            this.btnAddCart.Size = new System.Drawing.Size(197, 90);
+            this.btnAddCart.Size = new System.Drawing.Size(168, 72);
             this.btnAddCart.TabIndex = 16;
             this.btnAddCart.Text = "Add Cart";
-            this.btnAddCart.UseVisualStyleBackColor = true;
+            this.btnAddCart.UseVisualStyleBackColor = false;
             this.btnAddCart.Click += new System.EventHandler(this.btnAddCart_Click);
             // 
             // btnViewCart
             // 
-            this.btnViewCart.Location = new System.Drawing.Point(1005, 9);
+            this.btnViewCart.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnViewCart.Location = new System.Drawing.Point(902, 78);
             this.btnViewCart.Name = "btnViewCart";
-            this.btnViewCart.Size = new System.Drawing.Size(269, 55);
+            this.btnViewCart.Size = new System.Drawing.Size(372, 189);
             this.btnViewCart.TabIndex = 17;
             this.btnViewCart.Text = "View Your Cart";
-            this.btnViewCart.UseVisualStyleBackColor = true;
+            this.btnViewCart.UseVisualStyleBackColor = false;
             this.btnViewCart.Click += new System.EventHandler(this.btnViewCart_Click);
             // 
             // productImage
             // 
             this.productImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.productImage.Image = global::Midterm.Properties.Resources.images;
-            this.productImage.Location = new System.Drawing.Point(709, 78);
+            this.productImage.Location = new System.Drawing.Point(652, 78);
             this.productImage.Name = "productImage";
             this.productImage.Size = new System.Drawing.Size(226, 264);
             this.productImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -211,13 +214,6 @@
             this.label3.TabIndex = 20;
             this.label3.Text = "Price :";
             // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(258, 78);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(376, 45);
-            this.txtID.TabIndex = 19;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -229,18 +225,29 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(1026, 252);
+            this.btnLogOut.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Location = new System.Drawing.Point(1107, 270);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(197, 90);
+            this.btnLogOut.Size = new System.Drawing.Size(167, 72);
             this.btnLogOut.TabIndex = 27;
             this.btnLogOut.Text = "Log out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(258, 78);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(376, 45);
+            this.txtID.TabIndex = 19;
+            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // Sale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 38F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1286, 747);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.productImage);
@@ -287,8 +294,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.TextBox txtID;
     }
 }

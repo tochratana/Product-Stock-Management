@@ -116,65 +116,74 @@
             // 
             // btnBuy
             // 
-            this.btnBuy.Location = new System.Drawing.Point(170, 645);
+            this.btnBuy.BackColor = System.Drawing.Color.Yellow;
+            this.btnBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuy.Location = new System.Drawing.Point(19, 561);
             this.btnBuy.Name = "btnBuy";
-            this.btnBuy.Size = new System.Drawing.Size(197, 90);
+            this.btnBuy.Size = new System.Drawing.Size(197, 59);
             this.btnBuy.TabIndex = 17;
             this.btnBuy.Text = "Buy";
-            this.btnBuy.UseVisualStyleBackColor = true;
+            this.btnBuy.UseVisualStyleBackColor = false;
             this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lobster", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(552, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 55);
+            this.label1.Size = new System.Drawing.Size(179, 42);
             this.label1.TabIndex = 18;
             this.label1.Text = "View Cart";
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(845, 645);
+            this.btnBack.BackColor = System.Drawing.Color.Green;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBack.Location = new System.Drawing.Point(1062, 435);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(212, 90);
+            this.btnBack.Size = new System.Drawing.Size(212, 57);
             this.btnBack.TabIndex = 19;
             this.btnBack.Text = "Back to Sale";
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnRemoveCart
             // 
-            this.btnRemoveCart.Location = new System.Drawing.Point(483, 645);
+            this.btnRemoveCart.BackColor = System.Drawing.Color.Red;
+            this.btnRemoveCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveCart.Location = new System.Drawing.Point(19, 626);
             this.btnRemoveCart.Name = "btnRemoveCart";
-            this.btnRemoveCart.Size = new System.Drawing.Size(233, 90);
+            this.btnRemoveCart.Size = new System.Drawing.Size(197, 61);
             this.btnRemoveCart.TabIndex = 20;
             this.btnRemoveCart.Text = "Remove Item";
-            this.btnRemoveCart.UseVisualStyleBackColor = true;
+            this.btnRemoveCart.UseVisualStyleBackColor = false;
             this.btnRemoveCart.Click += new System.EventHandler(this.btnRemoveCart_Click);
             // 
             // TotalAllProductsDollor
             // 
             this.TotalAllProductsDollor.AutoSize = true;
+            this.TotalAllProductsDollor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalAllProductsDollor.Location = new System.Drawing.Point(12, 441);
             this.TotalAllProductsDollor.Name = "TotalAllProductsDollor";
-            this.TotalAllProductsDollor.Size = new System.Drawing.Size(274, 38);
+            this.TotalAllProductsDollor.Size = new System.Drawing.Size(252, 36);
             this.TotalAllProductsDollor.TabIndex = 21;
             this.TotalAllProductsDollor.Text = "Total All Product :";
             // 
             // payment
             // 
             this.payment.AutoSize = true;
-            this.payment.Location = new System.Drawing.Point(728, 441);
+            this.payment.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.payment.Location = new System.Drawing.Point(12, 489);
             this.payment.Name = "payment";
-            this.payment.Size = new System.Drawing.Size(164, 38);
+            this.payment.Size = new System.Drawing.Size(250, 36);
             this.payment.TabIndex = 22;
-            this.payment.Text = "Payment :";
+            this.payment.Text = "Payment              :";
             // 
             // txtPayment
             // 
-            this.txtPayment.Location = new System.Drawing.Point(898, 434);
+            this.txtPayment.Location = new System.Drawing.Point(288, 487);
             this.txtPayment.Name = "txtPayment";
             this.txtPayment.Size = new System.Drawing.Size(376, 45);
             this.txtPayment.TabIndex = 23;
@@ -183,6 +192,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 38F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1286, 747);
             this.Controls.Add(this.txtPayment);
             this.Controls.Add(this.payment);

@@ -22,12 +22,12 @@ This is a simple desktop application developed using C# Windows Forms that manag
 
 ## 👥 Team Members
 
-| Name               | Role & Responsibilities          |
-| ------------------ | -------------------------------- |
-| ទូច រតនា​​           | Courses page, detail curses page |
-| អេង ហាយឡាយ      | Blog page, detail blog page      |
-| ជីវ បូណា​​            | Repository Setup, contact page   |
-| អ៊ូច យូឡាយ         | Blog Category, Account page      |
+| Name               | 
+| ------------------ |
+| ទូច រតនា​​           | 
+| អេង ហាយឡាយ      |
+| ជីវ បូណា​​            |
+| អ៊ូច យូឡាយ         |
 
 ---
 ## 🚀 Features

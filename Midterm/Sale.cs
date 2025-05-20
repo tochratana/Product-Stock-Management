@@ -25,6 +25,17 @@ namespace Midterm
         List<Image> cartImage = new List<Image>();
         List<string> cartTotal = new List<string>();
 
+
+        private void ClearProductFields()
+        {
+            txtID.Clear();
+            txtProductName.Clear();
+            txtPrice.Clear();
+            txtQty.Clear();
+            productImage.Image = Properties.Resources.images;
+            txtQty.Focus();
+        }
+
         public Sale()
         {
             InitializeComponent();
@@ -53,84 +64,76 @@ namespace Midterm
             }
         }
         private void btnAddCart_Click(object sender, EventArgs e)
-        {            
-            string name = txtProductName.Text.Trim();
-            int qty = Convert.ToInt32(txtQty.Text.Trim());
-
-            double price = Convert.ToDouble(txtPrice.Text.Trim());
-            double total = 0;
-            for (int i = 0; i < storeId.Count; i++)
+        {
+            if (string.IsNullOrEmpty(txtID.Text) || string.IsNullOrEmpty(txtQty.Text))
             {
-                if(name == storeProductName[i])
-                {
-                    if (qty > Convert.ToInt32(storeQuantity[i]))
-                    {
-                        MessageBox.Show("Not enough quantity in stock.");
-                        txtQty.Focus();
-                        return;
-                    }
-                    else
-                    {
-                        total = price * qty;
-
-                        if (cartId.Count > 0)
-                        {
-                            for (int j = 0; j < cartId.Count; j++)
-                            {
-                                if (txtID.Text.Trim() == cartId[j])
-                                {
-                                    if (Convert.ToInt32(cartQuantity[j]) + qty > Convert.ToInt32(storeQuantity[i]))
-                                    {
-                                        MessageBox.Show("Not enough quantity in stock.");
-                                        txtQty.Focus();
-                                        return;
-                                    }
-                                    else
-                                    {
-                                        int cartQty = Convert.ToInt32(cartQuantity[j]);
-                                        int newQty = cartQty + qty;                                        
-                                        total = price * newQty;
-                                        cartQuantity[j] = newQty.ToString();
-                                        cartTotal[j] = total.ToString();
-                                        if (myDataGridView.SelectedRows.Count > 0)
-                                        {
-                                            int selectedRowIndex = myDataGridView.SelectedRows[0].Index;
-
-                                            cartId[selectedRowIndex] = txtID.Text.Trim();
-                                            cartProductName[selectedRowIndex] = txtProductName.Text.Trim();
-                                            cartPrice[selectedRowIndex] = txtPrice.Text.Trim();
-                                            cartQuantity[selectedRowIndex] = newQty.ToString();
-                                            cartImage[selectedRowIndex] = productImage.Image;
-                                            cartTotal[selectedRowIndex] = total.ToString();
-                                        }
-                                        MessageBox.Show("Item Add to Cart Success.");
-                                        txtID.Clear();
-                                        txtProductName.Clear();
-                                        txtPrice.Clear();
-                                        txtQty.Clear();
-                                        productImage.Image = Properties.Resources.images;
-                                        return;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                MessageBox.Show("Please select a product and enter quantity");
+                return;
             }
-            cartId.Add(txtID.Text.Trim());
-            cartProductName.Add(txtProductName.Text.Trim());
-            cartPrice.Add(txtPrice.Text.Trim());
-            cartQuantity.Add(txtQty.Text.Trim());
-            cartImage.Add(productImage.Image);
-            cartTotal.Add(total.ToString());
-            MessageBox.Show("Item Add to Cart Success.");
 
-            txtID.Clear();
-            txtProductName.Clear();
-            txtPrice.Clear();
-            txtQty.Clear();
-            productImage.Image = Properties.Resources.images;
-            return;
+            string id = txtID.Text.Trim();
+            string name = txtProductName.Text.Trim();
+
+            if (!int.TryParse(txtQty.Text, out int qty) || qty <= 0)
+            {
+                MessageBox.Show("Please enter a valid quantity");
+                return;
+            }
+
+            // Find the product in store inventory
+            int storeIndex = storeId.IndexOf(id);
+            if (storeIndex == -1)
+            {
+                MessageBox.Show("Product not found in inventory");
+                return;
+            }
+
+            // Check stock availability
+            if (!int.TryParse(storeQuantity[storeIndex], out int availableQty))
+            {
+                MessageBox.Show("Invalid stock quantity");
+                return;
+            }
+
+            if (qty > availableQty)
+            {
+                MessageBox.Show($"Not enough stock. Only {availableQty} available.");
+                return;
+            }
+
+            double price = Convert.ToDouble(txtPrice.Text);
+            double total = price * qty;
+
+            // Check if item already exists in cart
+            int cartIndex = cartId.IndexOf(id);
+            if (cartIndex != -1)
+            {
+                // Update existing cart item
+                int currentCartQty = int.Parse(cartQuantity[cartIndex]);
+                int newQty = currentCartQty + qty;
+
+                if (newQty > availableQty)
+                {
+                    MessageBox.Show($"Cannot add more than available stock ({availableQty})");
+                    return;
+                }
+
+                cartQuantity[cartIndex] = newQty.ToString();
+                cartTotal[cartIndex] = (price * newQty).ToString();
+            }
+            else
+            {
+                // Add new item to cart
+                cartId.Add(id);
+                cartProductName.Add(name);
+                cartPrice.Add(price.ToString());
+                cartQuantity.Add(qty.ToString());
+                cartImage.Add(productImage.Image);
+                cartTotal.Add(total.ToString());
+            }
+
+            MessageBox.Show("Item added to cart successfully");
+            ClearProductFields();
         }
 
         private void myDataGridView_SelectionChanged(object sender, EventArgs e)
@@ -162,6 +165,11 @@ namespace Midterm
         {
             this.Hide();
             new Login(storeId, storeProductName, storePrice, storeQuantity, storeImage).Show();
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

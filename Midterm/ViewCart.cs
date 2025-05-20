@@ -52,48 +52,135 @@ namespace Midterm
             {
                 myDataGridView.Rows.Add(cartId[i], cartProductName[i], cartPrice[i], cartQuantity[i], cartImage[i], cartTotal[i]);
             }
-        }        
+        }
         private void btnBuy_Click(object sender, EventArgs e)
         {
-            double finalTotal = 0;
-            double total = 0;
-            string message = "";
-
-            string paymentMethod = txtPayment.Text.Trim();
-            double payment = Convert.ToDouble(paymentMethod);
-            double change = 0;
-
-            for (int i = 0; i < storeId.Count; i++)
+            if (cartId.Count == 0)
             {
-                if (i < cartProductName.Count && i < cartQuantity.Count && i < cartPrice.Count)
+                MessageBox.Show("Cart is empty");
+                return;
+            }
+
+            if (!double.TryParse(txtPayment.Text, out double payment) || payment <= 0)
+            {
+                MessageBox.Show("Please enter a valid payment amount");
+                return;
+            }
+
+            // Calculate total and update inventory
+            double finalTotal = 0;
+            StringBuilder receipt = new StringBuilder();
+
+            // Format receipt header
+            receipt.AppendLine("=== STORE RECEIPT ===".PadCenter(40));
+            receipt.AppendLine($"Date: {DateTime.Now.ToString("yyyy-MM-dd HH:mm")}");
+            receipt.AppendLine(new string('-', 40));
+            receipt.AppendLine("ITEM".PadRight(20) + "QTY".PadLeft(5) + "PRICE".PadLeft(10) + "TOTAL".PadLeft(10));
+            receipt.AppendLine(new string('-', 40));
+
+            List<string> purchasedItems = new List<string>();
+
+            foreach (DataGridViewRow row in myDataGridView.Rows)
+            {
+                if (row.Cells[0].Value == null) continue;
+
+                string id = row.Cells[0].Value.ToString();
+                int storeIndex = storeId.IndexOf(id);
+
+                if (storeIndex == -1)
                 {
-                    if (cartProductName[i] == storeProductName[i])
-                    {
-                        int qty = Convert.ToInt32(cartQuantity[i]);
-                        double price = Convert.ToDouble(cartPrice[i]);
+                    MessageBox.Show($"Product {id} not found in inventory");
+                    return;
+                }
 
-                        int stock = Convert.ToInt32(storeQuantity[i]);
+                if (!double.TryParse(row.Cells[2].Value.ToString(), out double price) ||
+                    !int.TryParse(row.Cells[3].Value.ToString(), out int qty))
+                {
+                    MessageBox.Show("Invalid price or quantity");
+                    return;
+                }
 
-                        int cutStock = stock - qty;
-                        storeQuantity[i] = cutStock.ToString();
-                        total = price * qty;
-                        message += $"{cartProductName[i]}({cartQuantity[i]}) : = ${total}\n";
-                        finalTotal += total;
-                    }
+                double itemTotal = price * qty;
+                finalTotal += itemTotal;
+
+                // Format line items
+                receipt.AppendLine(
+                    row.Cells[1].Value.ToString().Truncate(18).PadRight(20) +
+                    qty.ToString().PadLeft(5) +
+                    price.ToString("C").PadLeft(10) +
+                    itemTotal.ToString("C").PadLeft(10)
+                );
+
+                // Update inventory
+                if (!int.TryParse(storeQuantity[storeIndex], out int currentStock))
+                {
+                    MessageBox.Show("Invalid stock quantity");
+                    return;
+                }
+
+                if (qty > currentStock)
+                {
+                    MessageBox.Show($"Not enough stock for {row.Cells[1].Value}");
+                    return;
+                }
+
+                storeQuantity[storeIndex] = (currentStock - qty).ToString();
+                purchasedItems.Add(id);
+            }
+
+            // Process payment
+            if (payment < finalTotal)
+            {
+                MessageBox.Show($"Insufficient payment. Total: {finalTotal:C}, Paid: {payment:C}");
+                return;
+            }
+
+            double change = payment - finalTotal;
+
+            // Format receipt footer
+            receipt.AppendLine(new string('-', 40));
+            receipt.AppendLine("SUBTOTAL:".PadLeft(35) + finalTotal.ToString("C").PadLeft(10));
+            receipt.AppendLine("PAID:".PadLeft(35) + payment.ToString("C").PadLeft(10));
+            receipt.AppendLine("CHANGE:".PadLeft(35) + change.ToString("C").PadLeft(10));
+            receipt.AppendLine(new string('-', 40));
+            receipt.AppendLine("THANK YOU FOR YOUR PURCHASE!".PadCenter(40));
+
+            // Show receipt in new window
+            ReceiptForm receiptForm = new ReceiptForm();
+            receiptForm.SetReceiptContent(receipt.ToString());
+            receiptForm.ShowDialog();
+
+            // Clear purchased items from cart
+            foreach (string id in purchasedItems)
+            {
+                int index = cartId.IndexOf(id);
+                if (index != -1)
+                {
+                    cartId.RemoveAt(index);
+                    cartProductName.RemoveAt(index);
+                    cartPrice.RemoveAt(index);
+                    cartQuantity.RemoveAt(index);
+                    cartImage.RemoveAt(index);
+                    cartTotal.RemoveAt(index);
                 }
             }
-            if(payment > finalTotal)
+
+            // Refresh DataGridView
+            myDataGridView.Rows.Clear();
+            foreach (var item in cartId.Select((id, index) => new { id, index }))
             {
-                MessageBox.Show($"{message}\nTotal = ${finalTotal}\nRecived ${paymentMethod} from customer.\nChange = ${ change = Convert.ToDouble(paymentMethod) - finalTotal}");               
-                myDataGridView.Rows.Clear();
-                TotalAllProductsDollor.Text = $"Change = ${change}";
-                txtPayment.Clear();
+                myDataGridView.Rows.Add(
+                    cartId[item.index],
+                    cartProductName[item.index],
+                    cartPrice[item.index],
+                    cartQuantity[item.index],
+                    cartImage[item.index],
+                    cartTotal[item.index]
+                );
             }
-            else
-            {
-                MessageBox.Show("Not Enough Money To Buy");
-            }
-            
+
+            UpdateTotalLabel();
+            txtPayment.Clear();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
