@@ -20,6 +20,18 @@ This is a simple desktop application developed using **C# Windows Forms** that m
 
 ---
 
+## User & Password
+```bash
+# Admin :
+username : admin
+password : admin123
+
+# User
+username : user
+password : user123
+
+```
+
 ## 👥 Team Members
 
 | Name               |  
